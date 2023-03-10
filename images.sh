@@ -7,7 +7,7 @@ docker login --username=finger_711 registry.cn-hangzhou.aliyuncs.com
 #read username
 #echo “请输入密码：”
 #read password
-srcrepo="regitstry.k8s.io/"
+srcrepo="registry.k8s.io/"
 destrepo="registry.cn-hangzhou.aliyuncs.com/finger-k8s/"
 for i in "${images[@]}" ; do
     docker pull $srcrepo$i
