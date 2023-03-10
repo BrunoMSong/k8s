@@ -18,6 +18,5 @@ for i in "${images[@]}" ; do
     else
         echo “$destrepo$i 同步失败”
     fi
-    echo “所有镜像同步完成”
 done
 
