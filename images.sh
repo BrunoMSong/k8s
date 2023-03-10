@@ -1,12 +1,10 @@
 #!/bin/bash
-  
+
+#定义需要下载的镜像列表
 images=(kube-apiserver:v1.24.11 kube-controller-manager:v1.24.11 kube-scheduler:v1.24.11 kube-proxy:v1.24.11)
+#登陆阿里云镜像仓库，便于push镜像
 docker login --username=finger_711 registry.cn-hangzhou.aliyuncs.com
-##获取阿里云仓库的账号密码，方便后续登陆 
-#cho “请输入容器仓库登陆账号：”
-#read username
-#echo “请输入密码：”
-#read password
+#定义源和目的镜像仓库，便于拼接完整镜像名称
 srcrepo="registry.k8s.io/"
 destrepo="registry.cn-hangzhou.aliyuncs.com/finger-k8s/"
 for i in "${images[@]}" ; do
